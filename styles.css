@@ -489,6 +489,25 @@ a.service-card:hover {
   width: min(78%, 360px);
 }
 
+.build-photo-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  align-items: stretch;
+}
+
+.build-photo-stack img {
+  width: 100%;
+  min-height: 420px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.build-photo-stack img:first-child {
+  transform: translateY(1.4rem);
+}
+
 .check-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -723,6 +742,7 @@ a.service-card:hover {
   .split,
   .build-grid,
   .contact-grid,
+  .build-photo-stack,
   .form-grid,
   .section-header {
     grid-template-columns: 1fr;
@@ -745,6 +765,12 @@ a.service-card:hover {
 
   .service-card {
     min-height: 0;
+  }
+
+  .build-photo-stack img,
+  .build-photo-stack img:first-child {
+    min-height: 280px;
+    transform: none;
   }
 }
 
