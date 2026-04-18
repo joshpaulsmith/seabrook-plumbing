@@ -259,15 +259,17 @@ h1 {
 
 .hero-art {
   border-radius: var(--radius);
-  background: var(--charcoal);
+  background: #333333;
   box-shadow: var(--shadow);
   overflow: hidden;
+  padding: clamp(0.85rem, 2vw, 1.5rem);
 }
 
 .hero-art img {
   width: 100%;
-  min-height: 430px;
-  object-fit: cover;
+  height: auto;
+  max-height: min(52vh, 520px);
+  object-fit: contain;
   object-position: center;
 }
 
@@ -618,36 +620,6 @@ a.service-card:hover {
   font-weight: 700;
 }
 
-.project-section {
-  background: var(--white);
-}
-
-.project-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.project-gallery figure {
-  margin: 0;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--light);
-  overflow: hidden;
-}
-
-.project-gallery img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-.project-gallery figcaption {
-  padding: 0.9rem 1rem 1rem;
-  color: var(--muted);
-  font-weight: 700;
-}
-
 .site-footer {
   padding: 2rem 0 6rem;
   color: rgba(255, 255, 255, 0.72);
@@ -754,12 +726,11 @@ a.service-card:hover {
   }
 
   .hero-art img {
-    min-height: 280px;
+    max-height: none;
   }
 
   .trust-grid,
-  .services-grid,
-  .project-gallery {
+  .services-grid {
     grid-template-columns: 1fr;
   }
 
