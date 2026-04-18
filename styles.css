@@ -646,6 +646,22 @@ a.service-card:hover {
   width: min(520px, 100%);
 }
 
+.footer-credit {
+  display: inline-flex;
+  margin-top: 0.25rem;
+  color: rgba(255, 255, 255, 0.62);
+  font-family: "Roboto Mono", "Courier New", monospace;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.footer-credit:hover {
+  color: var(--white);
+}
+
 .floating-call {
   position: fixed;
   right: 1rem;
