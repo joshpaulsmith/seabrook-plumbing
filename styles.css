@@ -463,6 +463,47 @@ a.service-card:hover {
   margin-top: 0.9rem;
 }
 
+.install-gallery-section {
+  background: var(--white);
+}
+
+.install-feature-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  grid-template-rows: repeat(2, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.install-feature {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--light);
+  overflow: hidden;
+}
+
+.install-feature.large {
+  grid-row: span 2;
+}
+
+.install-feature img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.install-feature.large img {
+  min-height: 560px;
+}
+
+.install-feature figcaption {
+  padding: 0.85rem 1rem 1rem;
+  color: var(--muted);
+  font-weight: 800;
+}
+
 .build-section {
   color: var(--white);
   background: var(--charcoal);
@@ -508,6 +549,24 @@ a.service-card:hover {
 
 .build-photo-stack img:first-child {
   transform: translateY(1.4rem);
+}
+
+.install-side-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.install-side-gallery img {
+  width: 100%;
+  min-height: 240px;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.install-side-gallery img:first-child {
+  grid-column: 1 / -1;
+  min-height: 300px;
 }
 
 .check-grid {
@@ -730,8 +789,13 @@ a.service-card:hover {
   }
 
   .trust-grid,
-  .services-grid {
+  .services-grid,
+  .install-feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .install-feature-grid {
+    grid-template-rows: none;
   }
 
   .service-card {
@@ -789,6 +853,17 @@ a.service-card:hover {
 
   .check-grid {
     grid-template-columns: 1fr;
+  }
+
+  .install-side-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .install-feature.large img,
+  .install-feature img,
+  .install-side-gallery img,
+  .install-side-gallery img:first-child {
+    min-height: 260px;
   }
 
   .floating-call {
