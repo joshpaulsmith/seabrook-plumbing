@@ -599,6 +599,36 @@ a.service-card:hover {
   font-weight: 700;
 }
 
+.project-section {
+  background: var(--white);
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-gallery figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--light);
+  overflow: hidden;
+}
+
+.project-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.project-gallery figcaption {
+  padding: 0.9rem 1rem 1rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
 .site-footer {
   padding: 2rem 0 6rem;
   color: rgba(255, 255, 255, 0.72);
@@ -692,7 +722,8 @@ a.service-card:hover {
   }
 
   .trust-grid,
-  .services-grid {
+  .services-grid,
+  .project-gallery {
     grid-template-columns: 1fr;
   }
 
