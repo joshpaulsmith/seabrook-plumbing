@@ -37,7 +37,7 @@
       <div class="container">
         <p class="eyebrow">Contact</p>
         <h1>Call Seabrook Plumbing &amp; Heating.</h1>
-        <p class="hero-text">Book service work, plan an installation, ask about new build plumbing, or schedule free water testing.</p>
+        <p class="hero-text">Book service work, plan an installation, ask about new build plumbing, send an email, or schedule free water testing.</p>
       </div>
     </section>
     <section class="section contact-section">
@@ -50,8 +50,52 @@
         <div class="contact-card">
           <a class="contact-number" href="tel:+17052061696">705-206-1696</a>
           <p>Seabrook Plumbing &amp; Heating</p>
-          <div class="contact-actions"><a class="button" href="tel:+17052061696">Call Now</a><a class="button button-dark" href="../water-testing/">Free Water Testing</a></div>
+          <a class="email-link" href="mailto:seabrookplumbingandheating@gmail.com">seabrookplumbingandheating@gmail.com</a>
+          <div class="contact-actions"><a class="button" href="tel:+17052061696">Call Now</a><a class="button button-dark" href="mailto:seabrookplumbingandheating@gmail.com">Email Seabrook</a></div>
         </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container form-grid">
+        <div>
+          <p class="section-kicker">Contact Form</p>
+          <h2>Send the details online.</h2>
+          <p>Use the form for service calls, installations, inspections, new builds, or free water testing.</p>
+        </div>
+        <form class="site-form" action="https://formsubmit.co/seabrookplumbingandheating@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New contact form submission from seabrookplumbing.ca" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" autocomplete="tel" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" />
+          </label>
+          <label>
+            Type of work
+            <select name="work_type" required>
+              <option value="">Choose one</option>
+              <option value="Free water testing">Free water testing</option>
+              <option value="Installation">Installation</option>
+              <option value="Service or diagnostics">Service or diagnostics</option>
+              <option value="Inspection">Inspection</option>
+              <option value="New build or renovation">New build or renovation</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <label class="full-field">
+            Message
+            <textarea name="message" rows="6" placeholder="Tell Seabrook what is happening and where the job is located." required></textarea>
+          </label>
+          <button class="button" type="submit">Send Message</button>
+        </form>
       </div>
     </section>
   </main>

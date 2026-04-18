@@ -526,6 +526,63 @@ a.service-card:hover {
   margin-top: 0.4rem;
 }
 
+.email-link {
+  display: inline-flex;
+  margin-top: 0.9rem;
+  color: var(--red);
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(320px, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.site-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+}
+
+.site-form label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--ink);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.site-form input,
+.site-form select,
+.site-form textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--light);
+  color: var(--ink);
+  font: inherit;
+}
+
+.site-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.site-form .full-field,
+.site-form button {
+  grid-column: 1 / -1;
+}
+
 .detail-list {
   display: grid;
   gap: 0.8rem;
@@ -620,6 +677,7 @@ a.service-card:hover {
   .split,
   .build-grid,
   .contact-grid,
+  .form-grid,
   .section-header {
     grid-template-columns: 1fr;
   }
@@ -675,8 +733,14 @@ a.service-card:hover {
 
   .hero-actions,
   .contact-actions,
-  .button {
+  .button,
+  .site-form {
     width: 100%;
+  }
+
+  .site-form {
+    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
   .check-grid {
