@@ -17,6 +17,11 @@ Upload the contents of this folder to the GitHub repository root:
 - `sitemap.xml`
 - `CNAME`
 - `404.html`
+- `water-testing/`
+- `installations/`
+- `service/`
+- `new-builds/`
+- `contact/`
 
 The `CNAME` file is set to `seabrookplumbing.ca`.
 
@@ -25,3 +30,4 @@ The `CNAME` file is set to `seabrookplumbing.ca`.
 - The phone number is pulled from the supplied header artwork: `705-206-1696`.
 - The dark header/background color matches the supplied header artwork.
 - The page is static and can be hosted on GitHub Pages.
+- The navigation uses separate pages instead of homepage anchor jumps.
