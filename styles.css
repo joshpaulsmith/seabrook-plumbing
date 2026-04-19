@@ -386,22 +386,6 @@ h2 {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
 
-.meter {
-  position: relative;
-  height: 18px;
-  margin-bottom: 1.2rem;
-  border-radius: var(--radius);
-  background: #d9dde1;
-  overflow: hidden;
-}
-
-.meter span {
-  display: block;
-  width: 74%;
-  height: 100%;
-  background: linear-gradient(90deg, #767b80, var(--red));
-}
-
 .water-test-graphic {
   position: relative;
   min-height: 210px;
@@ -412,116 +396,123 @@ h2 {
   border: 1px solid rgba(23, 23, 23, 0.08);
   border-radius: var(--radius);
   background:
-    radial-gradient(circle at 50% 100%, rgba(237, 28, 36, 0.12), transparent 38%),
+    radial-gradient(circle at 50% 78%, rgba(237, 28, 36, 0.14), transparent 34%),
+    linear-gradient(90deg, rgba(23, 23, 23, 0.05) 1px, transparent 1px),
     linear-gradient(180deg, #ffffff, #eef2f4);
+  background-size: auto, 38px 38px, auto;
 }
 
-.test-cylinder {
+.pipe-flow {
   position: relative;
   z-index: 2;
-  width: min(150px, 44vw);
-  height: 178px;
+  width: min(360px, 82vw);
+  height: 104px;
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.16));
+}
+
+.pipe-cap {
+  position: relative;
+  z-index: 3;
+  flex: 0 0 40px;
+  height: 96px;
   border: 5px solid rgba(23, 23, 23, 0.78);
-  border-top-width: 10px;
-  border-radius: 0 0 32px 32px;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.78), transparent 24%),
-    rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.42), 0 18px 34px rgba(0, 0, 0, 0.12);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.46), transparent 45%),
+    linear-gradient(180deg, #5b6368, #2d3337);
+}
+
+.pipe-cap-left {
+  border-radius: 26px 8px 8px 26px;
+}
+
+.pipe-cap-right {
+  border-radius: 8px 26px 26px 8px;
+}
+
+.pipe-window {
+  position: relative;
+  flex: 1;
+  height: 74px;
+  border-top: 5px solid rgba(23, 23, 23, 0.78);
+  border-bottom: 5px solid rgba(23, 23, 23, 0.78);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.06) 28%, transparent 29%),
+    linear-gradient(180deg, #5ab8d5, #1f83ae 62%, #176886);
   overflow: hidden;
 }
 
-.test-cylinder::before {
+.pipe-window::before {
   content: "";
   position: absolute;
-  top: -12px;
-  left: 50%;
-  width: 72px;
-  height: 20px;
-  border: 5px solid rgba(23, 23, 23, 0.78);
-  border-bottom: 0;
-  border-radius: 18px 18px 0 0;
-  transform: translateX(-50%);
-}
-
-.test-cylinder::after {
-  content: "";
-  position: absolute;
-  right: 18px;
-  bottom: 14px;
-  width: 20px;
-  height: 116px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.34);
-}
-
-.water-fill {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 68%;
+  inset: 0;
   background:
-    linear-gradient(180deg, rgba(85, 182, 214, 0.82), rgba(25, 116, 160, 0.92)),
-    #2386b4;
-  transform-origin: bottom;
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 3px, transparent 4px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.38) 0 2px, transparent 3px);
+  background-position: 0 18px, 24px 43px;
+  background-size: 62px 34px, 76px 38px;
+  animation: water-drift 4.8s linear infinite;
 }
 
-.water-fill::before,
-.water-fill::after {
+.pipe-window::after {
   content: "";
   position: absolute;
-  left: -20%;
-  width: 140%;
-  height: 34px;
-  border-radius: 50%;
-}
-
-.water-fill::before {
-  top: -17px;
-  background: rgba(255, 255, 255, 0.72);
-  animation: water-sway 5s ease-in-out infinite;
-}
-
-.water-fill::after {
-  top: -11px;
-  background: rgba(43, 158, 198, 0.9);
-  animation: water-sway 4.4s ease-in-out infinite reverse;
-}
-
-.water-fill span {
-  position: absolute;
-  inset: 24px 16px auto;
-  height: 2px;
+  inset: 9px 18px auto;
+  height: 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 24px 0 rgba(255, 255, 255, 0.28), 0 48px 0 rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.32);
 }
 
-.bubble {
+.flow-line {
   position: absolute;
-  z-index: 3;
-  bottom: 20px;
-  width: 11px;
-  height: 11px;
-  border: 2px solid rgba(255, 255, 255, 0.82);
+  left: -34%;
+  width: 42%;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  animation: pipe-flow 2.8s linear infinite;
+}
+
+.flow-one {
+  top: 27px;
+}
+
+.flow-two {
+  top: 42px;
+  animation-delay: 0.9s;
+}
+
+.flow-three {
+  top: 56px;
+  width: 30%;
+  animation-delay: 1.6s;
+}
+
+.flow-bubble {
+  position: absolute;
+  z-index: 2;
+  left: -18px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.84);
   border-radius: 50%;
-  animation: bubble-rise 4.8s ease-in-out infinite;
+  animation: pipe-bubble 4s linear infinite;
 }
 
 .bubble-one {
-  left: 34px;
+  top: 24px;
 }
 
 .bubble-two {
-  left: 70px;
+  top: 48px;
   width: 8px;
   height: 8px;
   animation-delay: 1.2s;
 }
 
 .bubble-three {
-  right: 38px;
+  top: 36px;
   width: 14px;
   height: 14px;
   animation-delay: 2s;
@@ -529,11 +520,11 @@ h2 {
 
 .drain-rings {
   position: absolute;
-  bottom: 24px;
+  bottom: 20px;
   left: 50%;
   z-index: 1;
-  width: 260px;
-  height: 72px;
+  width: min(310px, 76vw);
+  height: 52px;
   transform: translateX(-50%);
 }
 
@@ -556,15 +547,16 @@ h2 {
   background: rgba(23, 23, 23, 0.06);
 }
 
-.pipe-stem {
+.pipe-elbow {
   position: absolute;
-  bottom: -5px;
+  bottom: 16px;
   left: 50%;
-  width: 34px;
-  height: 36px;
-  border-radius: 8px 8px 0 0;
-  background: linear-gradient(90deg, #4f5559, #1f2427);
-  transform: translateX(-50%);
+  width: 66px;
+  height: 62px;
+  border-right: 12px solid #30363a;
+  border-bottom: 12px solid #30363a;
+  border-radius: 0 0 24px 0;
+  transform: translateX(94px);
 }
 
 .test-panel h3,
@@ -627,13 +619,6 @@ h2 {
 a.service-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
-}
-
-.service-card span {
-  display: inline-flex;
-  margin-bottom: 2.4rem;
-  color: var(--red);
-  font-weight: 900;
 }
 
 .service-card p {
@@ -942,29 +927,44 @@ a.service-card:hover {
   text-transform: uppercase;
 }
 
-@keyframes water-sway {
-  0%,
-  100% {
-    transform: translateX(-2%) rotate(0deg);
+@keyframes water-drift {
+  0% {
+    background-position: 0 18px, 24px 43px;
   }
 
-  50% {
-    transform: translateX(2%) rotate(1deg);
+  100% {
+    background-position: 124px 18px, 176px 43px;
   }
 }
 
-@keyframes bubble-rise {
+@keyframes pipe-flow {
   0% {
-    transform: translateY(0) scale(0.7);
+    transform: translateX(0);
     opacity: 0;
   }
 
-  20% {
+  12% {
     opacity: 1;
   }
 
   100% {
-    transform: translateY(-96px) scale(1.12);
+    transform: translateX(340%);
+    opacity: 0;
+  }
+}
+
+@keyframes pipe-bubble {
+  0% {
+    transform: translateX(0) scale(0.72);
+    opacity: 0;
+  }
+
+  14% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(360px) scale(1.05);
     opacity: 0;
   }
 }
