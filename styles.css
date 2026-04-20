@@ -225,6 +225,25 @@ h1 {
   margin-top: 1.8rem;
 }
 
+.hero-service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-service-list li {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius);
+  color: rgba(255, 255, 255, 0.84);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -378,185 +397,23 @@ h2 {
   background: var(--white);
 }
 
+.water-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
 .test-panel {
-  padding: 1.5rem;
+  display: grid;
+  align-content: center;
+  padding: 1.7rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--light);
+  background:
+    linear-gradient(135deg, rgba(237, 28, 36, 0.08), transparent 42%),
+    var(--light);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-}
-
-.water-test-graphic {
-  position: relative;
-  min-height: 210px;
-  margin-bottom: 1.2rem;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border: 1px solid rgba(23, 23, 23, 0.08);
-  border-radius: var(--radius);
-  background:
-    radial-gradient(circle at 50% 78%, rgba(237, 28, 36, 0.14), transparent 34%),
-    linear-gradient(90deg, rgba(23, 23, 23, 0.05) 1px, transparent 1px),
-    linear-gradient(180deg, #ffffff, #eef2f4);
-  background-size: auto, 38px 38px, auto;
-}
-
-.pipe-flow {
-  position: relative;
-  z-index: 2;
-  width: min(360px, 82vw);
-  height: 104px;
-  display: flex;
-  align-items: center;
-  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.16));
-}
-
-.pipe-cap {
-  position: relative;
-  z-index: 3;
-  flex: 0 0 40px;
-  height: 96px;
-  border: 5px solid rgba(23, 23, 23, 0.78);
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.46), transparent 45%),
-    linear-gradient(180deg, #5b6368, #2d3337);
-}
-
-.pipe-cap-left {
-  border-radius: 26px 8px 8px 26px;
-}
-
-.pipe-cap-right {
-  border-radius: 8px 26px 26px 8px;
-}
-
-.pipe-window {
-  position: relative;
-  flex: 1;
-  height: 74px;
-  border-top: 5px solid rgba(23, 23, 23, 0.78);
-  border-bottom: 5px solid rgba(23, 23, 23, 0.78);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.06) 28%, transparent 29%),
-    linear-gradient(180deg, #5ab8d5, #1f83ae 62%, #176886);
-  overflow: hidden;
-}
-
-.pipe-window::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 3px, transparent 4px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.38) 0 2px, transparent 3px);
-  background-position: 0 18px, 24px 43px;
-  background-size: 62px 34px, 76px 38px;
-  animation: water-drift 4.8s linear infinite;
-}
-
-.pipe-window::after {
-  content: "";
-  position: absolute;
-  inset: 9px 18px auto;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.32);
-}
-
-.flow-line {
-  position: absolute;
-  left: -34%;
-  width: 42%;
-  height: 3px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.58);
-  animation: pipe-flow 2.8s linear infinite;
-}
-
-.flow-one {
-  top: 27px;
-}
-
-.flow-two {
-  top: 42px;
-  animation-delay: 0.9s;
-}
-
-.flow-three {
-  top: 56px;
-  width: 30%;
-  animation-delay: 1.6s;
-}
-
-.flow-bubble {
-  position: absolute;
-  z-index: 2;
-  left: -18px;
-  width: 10px;
-  height: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.84);
-  border-radius: 50%;
-  animation: pipe-bubble 4s linear infinite;
-}
-
-.bubble-one {
-  top: 24px;
-}
-
-.bubble-two {
-  top: 48px;
-  width: 8px;
-  height: 8px;
-  animation-delay: 1.2s;
-}
-
-.bubble-three {
-  top: 36px;
-  width: 14px;
-  height: 14px;
-  animation-delay: 2s;
-}
-
-.drain-rings {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  z-index: 1;
-  width: min(310px, 76vw);
-  height: 52px;
-  transform: translateX(-50%);
-}
-
-.drain-rings span {
-  position: absolute;
-  inset: 0;
-  border: 2px solid rgba(237, 28, 36, 0.22);
-  border-radius: 50%;
-  transform: scale(var(--ring-scale, 1));
-}
-
-.drain-rings span:nth-child(2) {
-  --ring-scale: 0.72;
-  border-color: rgba(23, 23, 23, 0.14);
-}
-
-.drain-rings span:nth-child(3) {
-  --ring-scale: 0.44;
-  border-color: rgba(237, 28, 36, 0.36);
-  background: rgba(23, 23, 23, 0.06);
-}
-
-.pipe-elbow {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  width: 66px;
-  height: 62px;
-  border-right: 12px solid #30363a;
-  border-bottom: 12px solid #30363a;
-  border-radius: 0 0 24px 0;
-  transform: translateX(94px);
 }
 
 .test-panel h3,
@@ -658,6 +515,33 @@ a.service-card:hover {
 
 .local-seo-grid p {
   margin-top: 0.9rem;
+}
+
+.faq-section {
+  background: var(--white);
+}
+
+.faq-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.faq-grid details {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--light);
+}
+
+.faq-grid summary {
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  color: var(--ink);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.faq-grid details p {
+  padding: 0 1.1rem 1.1rem;
 }
 
 .install-gallery-section {
@@ -927,48 +811,6 @@ a.service-card:hover {
   text-transform: uppercase;
 }
 
-@keyframes water-drift {
-  0% {
-    background-position: 0 18px, 24px 43px;
-  }
-
-  100% {
-    background-position: 124px 18px, 176px 43px;
-  }
-}
-
-@keyframes pipe-flow {
-  0% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-
-  12% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(340%);
-    opacity: 0;
-  }
-}
-
-@keyframes pipe-bubble {
-  0% {
-    transform: translateX(0) scale(0.72);
-    opacity: 0;
-  }
-
-  14% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(360px) scale(1.05);
-    opacity: 0;
-  }
-}
-
 @media (max-width: 940px) {
   .nav-toggle {
     display: block;
@@ -1010,6 +852,7 @@ a.service-card:hover {
 
   .hero-grid,
   .split,
+  .water-grid,
   .build-grid,
   .contact-grid,
   .build-photo-stack,

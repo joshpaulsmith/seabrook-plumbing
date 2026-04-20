@@ -22,7 +22,7 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 
 if (!prefersReducedMotion && "IntersectionObserver" in window) {
   const revealItems = document.querySelectorAll(
-    ".hero-copy, .hero-art, .trust-grid a, .water-section .split > *, .section-header, .service-card, .local-seo-grid article, .build-grid > *, .contact-grid > *, .install-feature, .install-side-gallery img, .build-photo-stack img, .contact-card, .site-form"
+    ".hero-copy, .hero-art, .trust-grid a, .water-grid > *, .section-header, .service-card, .local-seo-grid article, .faq-grid details, .build-grid > *, .contact-grid > *, .install-feature, .install-side-gallery img, .build-photo-stack img, .contact-card, .site-form"
   );
 
   document.body.classList.add("motion-ready");
